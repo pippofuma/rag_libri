@@ -11,11 +11,11 @@ def estrai_testo_da_pdf(percorso_pdf):
     except Exception as e:
         return f"Errore nell'estrazione del testo: {str(e)}"
 
-# Esempio di utilizzo
-percorso_pdf = "docs/nuovo_grecita_short.pdf"  # Sostituisci con il percorso del tuo PDF
-testo_estratto = estrai_testo_da_pdf(percorso_pdf)
-print(testo_estratto)
-
-# Stampare il testo estratto
-with open(f"{percorso_pdf.replace('.', '_')}_testo_estratto.txt", "w", encoding="utf-8") as file_output:
-    file_output.write(testo_estratto)
+if __name__ == "__main__":
+    percorso_pdf = "docs/nuovo_grecita_short.pdf"  # Replace with your PDF path
+    testo_estratto = estrai_testo_da_pdf(percorso_pdf)
+    print(testo_estratto)
+    
+    # Write the extracted text to a file
+    with open(f"{percorso_pdf.replace('.', '_')}_testo_estratto.txt", "w", encoding="utf-8") as file_output:
+        file_output.write(testo_estratto)
