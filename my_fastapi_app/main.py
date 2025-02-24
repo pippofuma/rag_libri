@@ -2,8 +2,20 @@ import os
 from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from src.extract_gpt import carica_testo, suddividi_testo, crea_faiss_db, genera_risposta
 from src.extractor import estrai_testo_da_pdf
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+
+# Configura CORS per permettere richieste dal frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Specifica l'origine del tuo frontend, es. ["https://didem.vercel.app/"]
+    allow_credentials=True,
+    allow_methods=["*"],  # Permette tutti i metodi (GET, POST, ecc.)
+    allow_headers=["*"],  # Permette tutti gli headers
+)
+
 
 # Directory configuration
 DOCS_DIR = "docs"
