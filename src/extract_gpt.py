@@ -74,7 +74,7 @@ def genera_risposta(query, index, chunks):
     prompt = f"Contesto:\n{contesto}\n\nDomanda: {query}\nRispondi dettagliatamente basandoti sul contesto sopra."
     try:
         response = openai.chat.completions.create(
-            model="gpt-4",
+            model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "Sei un assistente utile."},
                 {"role": "user", "content": prompt}
