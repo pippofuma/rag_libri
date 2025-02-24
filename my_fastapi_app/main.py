@@ -10,7 +10,7 @@ app = FastAPI()
 # Configura CORS per permettere richieste dal frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Specifica l'origine del tuo frontend, es. ["https://didem.vercel.app/"]
+    allow_origins=["https://didem.vercel.app"],  # Specifica l'origine del tuo frontend, es. ["https://didem.vercel.app/"]
     allow_credentials=True,
     allow_methods=["*"],  # Permette tutti i metodi (GET, POST, ecc.)
     allow_headers=["*"],  # Permette tutti gli headers
